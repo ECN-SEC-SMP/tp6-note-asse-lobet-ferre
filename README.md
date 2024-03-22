@@ -1,8 +1,7 @@
 # tp6-note-asse-lobet-ferre
 tp6-note-asse-lobet-ferre created by GitHub Classroom
 
-bonjour
+constante MAJ 
 
-
-test
-
+code anglais 
+comentaire en francais.
