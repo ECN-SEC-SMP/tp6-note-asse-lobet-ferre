@@ -1,6 +1,8 @@
 #include "plateau.hpp"
 #include "box.hpp" // Supposons que vous avez défini la classe Box dans un fichier box.hpp
 
+#include <iostream>
+
 // Constructeur par défaut
 Plateau::Plateau() {
     // Initialisation de chaque case du plateau avec des instances de Box
@@ -24,5 +26,14 @@ Box* Plateau::getBoxAt(int index) const {
     } else {
         // Gestion de l'erreur si l'index est invalide
         return nullptr;
+    }
+}
+
+// Méthode pour imprimer le plateau
+void Plateau::print() const {
+    for (int i = 0; i < 40; ++i) {
+        //cout << "Case " << i << ": " << global[i]->getDescription() << std::endl; // Supposons que la classe Box ait une méthode getDescription()
+        cout << "Case " << i << ": " << "none" << endl; // Supposons que la classe Box ait une méthode getDescription()
+
     }
 }
