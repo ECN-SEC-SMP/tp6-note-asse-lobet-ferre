@@ -7,10 +7,12 @@ class Box;
 
 class Plateau {
 private:
-    std::array<Box*, 40> plateau; // Utilisation de pointeurs pour permettre la polymorphie
+    std::array<Box*, 40> global; // Utilisation de pointeurs pour permettre la polymorphie
 public:
     // Constructeur
     Plateau();
     // Destructeur
     ~Plateau();
+    // Getter pour obtenir une case du plateau par son index
+    Box* getBoxAt(int index) const;
 };
