@@ -1,19 +1,16 @@
-#pragma onceExplain
-// constructing arrays
-#include <iostream>
+#pragma once
+
 #include <array>
 
-using namespace std;
-
+// Forward declaration de la classe Box
+class Box;
 
 class Plateau {
-    //40 case
-    // case depart 
-    // case prison 
 private:
-    array<Box,40> global;
+    std::array<Box*, 40> plateau; // Utilisation de pointeurs pour permettre la polymorphie
 public:
-// Constructeur
-Plateau();
-    
+    // Constructeur
+    Plateau();
+    // Destructeur
+    ~Plateau();
 };
