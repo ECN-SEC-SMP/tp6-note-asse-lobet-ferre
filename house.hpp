@@ -3,7 +3,6 @@
 #include "realEstate.hpp"
 
 #include <iostream>
-#include <array>
 
 using namespace std; 
 
