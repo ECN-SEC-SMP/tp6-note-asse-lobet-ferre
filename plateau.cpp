@@ -41,7 +41,7 @@ void Plateau::print() const {
 // Méthode pour imprimer le contenu de la case à l'index spécifié
 void Plateau::printBoxAt(int index) const {
     if (index >= 0 && index < 40) {
-        cout << "Contenu de la case " << index << ": " << "not defined yet"<< endl;
+        cout << "Contenu de la case " << index << ": " << "not defined yet"<< endl; // Supposons que la classe Box ait une méthode getDescription()
     } else {
         cerr << "Erreur : indice de case invalide." << endl;
     }
