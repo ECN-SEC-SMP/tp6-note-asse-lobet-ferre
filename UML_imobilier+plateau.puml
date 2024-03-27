@@ -1,0 +1,69 @@
+@startuml
+
+
+
+
+
+/' Objects '/
+
+class Hotel {
+	+Hotel()
+	+~Hotel()
+	-PriceHotel : int
+	+getPrice() : int {query}
+	+print() : void {query}
+}
+
+
+class House {
+	+House()
+	+~House()
+	-PriceHouse : int
+	+getPrice() : int {query}
+	+print() : void {query}
+}
+
+
+class Plateau {
+	+Plateau()
+	+~Plateau()
+	+getBoxAt(int index) : Box* {query}
+	-global : std::array<Box*, 40>
+	+print() : void {query}
+	+printBoxAt(int index) : void {query}
+}
+
+
+abstract class RealEstate {
+	+RealEstate()
+	+~RealEstate()
+	+{abstract} getPrice() : int {query}
+	+{abstract} print() : void {query}
+}
+
+
+
+
+
+/' Inheritance relationships '/
+
+.RealEstate <|-- .Hotel
+
+
+.RealEstate <|-- .House
+
+
+
+
+
+/' Aggregation relationships '/
+
+
+
+
+
+/' Nested objects '/
+
+
+
+@enduml
