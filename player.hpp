@@ -4,22 +4,29 @@
 
 using namespace std;
 
-class Joueur
+class Player
 {
-    public:
-        string name;
-        int financialAssets;
-        int position;
-
-    protected:
-
     private:
 
-        Joueur(string newName, int newFinancialAssets);
+        string name;
+        int financialAssets;
+        int movement;
+        int nbDouble;
+        int position;
 
-        int const getPlayerPosition();
+    public:
+
+        Player(string newName, int newFinancialAssets, int movement, int nbDouble, int position);
 
         void buyHouse();
         void buyHotel();
         void buyRealEstateLand();
+
+        string getName() const;
+        int getFinancialAssets() const;
+        int getMovement() const;
+        int getNbDouble() const;
+        int getPosition () const;
+
+        friend ostream& operator<<(ostream& os, const Player& player);
 };
