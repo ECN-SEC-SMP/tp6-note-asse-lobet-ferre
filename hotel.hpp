@@ -10,7 +10,7 @@ using namespace std;
 
 class Hotel :public RealEstate {
 private:
-    int PriceHotel = 250;
+    int PriceHotel;
 public:
     // Constructeur
     Hotel();

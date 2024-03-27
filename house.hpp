@@ -10,7 +10,7 @@ using namespace std;
 
 class House : public RealEstate {
 private:
-    int PriceHouse = 200;
+    int PriceHouse;
 public:
     // Constructeur
     House();
