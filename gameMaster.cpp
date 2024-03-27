@@ -19,7 +19,7 @@ void GameMaster::startGame()
         string name;
         cout << "Nom du joueur ?" << endl;
         cin >> name;
-        Player joueur_i(name, 123, 5, 0, 5);
+        Player joueur_i(name, 123, 0, 5);
 
         Players.push_back(joueur_i);
     }

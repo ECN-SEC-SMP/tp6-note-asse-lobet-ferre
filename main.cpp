@@ -70,6 +70,18 @@ void testBoard()
     cout << plateau << endl;
 }
 
+void testPlayer()
+{
+    // Création d'un joueur
+    Player player("Romain", 1500, 0,0);
+
+    assert(player.getName() == "Romain");
+    assert(player.getFinancialAssets() == 1500);
+    assert(player.getNbDouble() == 0);
+    assert(player.getPosition() == 0);
+    cout << player << endl;
+}
+
 int main()
 {
     // Exécuter les tests
