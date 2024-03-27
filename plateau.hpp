@@ -19,7 +19,7 @@ public:
     // Getter pour obtenir une case du plateau par son index
     Box* getBoxAt(int index) const;
     // Méthode pour imprimer le plateau
-    void printPlateau() const;
+    void print() const;
     // Méthode pour imprimer le contenu de la case à l'index spécifié
     void printBoxAt(int index) const;
 };
