@@ -1,7 +1,8 @@
 #include <iostream>
 #include "plateau.hpp"
 #include "box.hpp" // Supposons que vous avez défini la classe Box dans un fichier box.hpp
-#include "Hotel.hpp"
+#include "hotel.hpp"
+#include "house.hpp"
 #include <cassert>
 
 using namespace std; 
@@ -13,8 +14,19 @@ void testHotel() {
     assert(hotel.getPrice() == 250);
 
     // Test de la méthode print()
-    std::cout << "Printing hotel details:" << std::endl;
+    cout << "Détail d'une Hotel:" << endl;
     hotel.print();
+}
+
+void testHouse() {
+    House house;
+
+    // Test de la méthode getPrice()
+    assert(house.getPrice() == 200);
+
+    // Test de la méthode print()
+    cout << "Détail d'une Maison: " << endl;
+    house.print();
 }
 
 int main() {
@@ -38,8 +50,9 @@ int main() {
 
     // Exécuter les tests
     testHotel();
+    testHouse();
 
-    std::cout << "All tests passed successfully!" << std::endl;
+    cout << "Tout les tests sont réussi" << endl;
 
     return 0;
 }

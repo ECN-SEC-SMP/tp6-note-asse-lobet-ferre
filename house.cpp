@@ -18,6 +18,6 @@ int House::getPrice() const {
 
 //Print d'une maison
 void House::print() const {
-    std::cout << "House" << std::endl;
-    std::cout << "Price: " << getPrice() << std::endl;
+    std::cout << "Maison" << std::endl;
+    std::cout << "Prix: " << getPrice() << std::endl;
 }
