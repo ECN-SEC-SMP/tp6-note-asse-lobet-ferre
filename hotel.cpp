@@ -20,5 +20,5 @@ int Hotel::getPrice() const {
 // Print d'un hotel
 void Hotel::print() const {
     std::cout << "Hotel" << std::endl;
-    std::cout << "Price: " << getPrice() << std::endl;
+    std::cout << "Prix: " << getPrice() << std::endl;
 }
