@@ -15,7 +15,7 @@ int main() {
 
     // Affichage du plateau
     std::cout << "Plateau avant initialisation :" << endl;
-    plateau.print();
+    plateau.printPlateau();
 
     // Accès à une case spécifique (par exemple, la case 5)
     int index = 5;

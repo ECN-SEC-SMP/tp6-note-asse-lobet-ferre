@@ -30,7 +30,7 @@ Box* Plateau::getBoxAt(int index) const {
 }
 
 // Méthode pour imprimer le plateau
-void Plateau::print() const {
+void Plateau::printPlateau() const {
     for (int i = 0; i < 40; ++i) {
         //cout << "Case " << i << ": " << global[i]->getDescription() << std::endl; // Supposons que la classe Box ait une méthode getDescription()
         cout << "Case " << i << ": " << "none" << endl; // Supposons que la classe Box ait une méthode getDescription()
