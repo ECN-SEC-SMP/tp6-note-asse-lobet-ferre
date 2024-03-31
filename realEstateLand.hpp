@@ -24,6 +24,7 @@ private:
 
 public:
     RealEstateLand(string name, int price, Color color);
+    ~RealEstateLand() override;
 
     Color getColor() const;
     int getRent() const override;

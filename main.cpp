@@ -1,7 +1,6 @@
 #include <iostream>
 #include "realEstateLand.hpp"
 #include "plateau.hpp"
-#include "box.hpp" // Supposons que vous avez défini la classe Box dans un fichier box.hpp
 #include "hotel.hpp"
 #include "house.hpp"
 #include <cassert>
@@ -30,30 +29,40 @@ void testHouse() {
     house.print();
 }
 
-int main() {
+void testRealEstateLand()
+{
+    RealEstateLand my_land("Mairie de doulon", 666, Color::GREEN);
+
+    std::cout << "Création d'une case de propriété" << endl;
+
+    cout << my_land << endl;
+
+}
+
+int main()
+{
     // Création d'un plateau
     Plateau plateau;
 
-    cout << "Bonjour monde!" << endl;
-    RealEstateLand my_land("Mairie de doulon", 666, Color::GREEN);
-    cout << my_land << endl;
-
     // Affichage du plateau
-    std::cout << "Plateau avant initialisation :" << endl;
+    cout << "Plateau avant initialisation :" << endl;
     plateau.print();
 
     // Accès à une case spécifique (par exemple, la case 5)
     int index = 5;
-    Box* box = plateau.getBoxAt(index);
-    if (box != nullptr) {
-        plateau.printBoxAt(index);
-    } else {
+    Land* land = plateau.getLandAt(index);
+    if (land != nullptr)
+    {
+        plateau.printLandAt(index);
+    } else
+    {
         cerr << "Erreur : indice de case invalide." << endl;
     }
 
     // Exécuter les tests
     testHotel();
     testHouse();
+    testRealEstateLand();
 
     cout << "Tout les tests sont réussi" << endl;
 

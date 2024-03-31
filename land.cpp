@@ -2,6 +2,8 @@
 
 Land::Land(string name, Type type) : name(name), type(type) { }
 
+Land::~Land() {}
+
 string Land::getName() const
 {
     return name;

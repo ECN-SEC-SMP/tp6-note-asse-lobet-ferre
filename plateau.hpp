@@ -1,25 +1,24 @@
 #pragma once
 
 #include <iostream>
-#include <array>
+#include <vector>
+#include "land.hpp"
 
-using namespace std; 
+using namespace std;
 
-// Forward declaration de la classe Box
-class Box;
-
-class Plateau {
+class Plateau
+{
 private:
-    std::array<Box*, 40> global; // Utilisation de pointeurs pour permettre la polymorphie
+    vector<Land *> global; // Utilisation de pointeurs pour permettre la polymorphie
 public:
     // Constructeur
     Plateau();
     // Destructeur
     ~Plateau();
     // Getter pour obtenir une case du plateau par son index
-    Box* getBoxAt(int index) const;
+    Land* getLandAt(int index) const;
     // Méthode pour imprimer le plateau
     void print() const;
     // Méthode pour imprimer le contenu de la case à l'index spécifié
-    void printBoxAt(int index) const;
+    void printLandAt(int index) const;
 };

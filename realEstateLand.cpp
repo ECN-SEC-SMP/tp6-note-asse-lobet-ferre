@@ -5,6 +5,11 @@ using namespace std;
 
 RealEstateLand::RealEstateLand(string name, int price, Color color) : BuyableLand(name, Type::REAL_ESTATE_LAND, price), color(color) {}
 
+RealEstateLand::~RealEstateLand()
+{
+    cout << "deleted" << endl;
+}
+
 int RealEstateLand::getRent() const
 {
     return this->price;

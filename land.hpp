@@ -22,6 +22,7 @@ protected:
 
 public:
     Land(string name, Type type);
+    virtual ~Land();
 
     Type getType() const;
     string getName() const;
