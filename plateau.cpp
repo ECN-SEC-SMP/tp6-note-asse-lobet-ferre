@@ -25,7 +25,9 @@ Plateau::~Plateau()
 // Getter pour obtenir une case du plateau par son index
 Land* Plateau::getLandAt(int index) const
 {
-    if (index >= 0 && index < 40)
+    int length = global.size();
+
+    if (index >= 0 && index < length)
     {
         return global[index];
     } else
@@ -38,7 +40,9 @@ Land* Plateau::getLandAt(int index) const
 // Méthode pour imprimer le plateau
 void Plateau::print() const
 {
-    for (int i = 0; i < 40; ++i)
+    int length = global.size();
+
+    for (int i = 0; i < length; ++i)
     {
         //cout << "Case " << i << ": " << global[i]->getDescription() << std::endl; // Supposons que la classe Land ait une méthode getDescription()
         cout << "Case " << i << ": " << "none" << endl; // Supposons que la classe Land ait une méthode getDescription()
@@ -49,7 +53,9 @@ void Plateau::print() const
 // Méthode pour imprimer le contenu de la case à l'index spécifié
 void Plateau::printLandAt(int index) const
 {
-    if (index >= 0 && index < 40)
+    int length = global.size();
+
+    if (index >= 0 && index < length)
     {
         cout << "Contenu de la case " << index << ": " << "not defined yet"<< endl; // Supposons que la classe Land ait une méthode getDescription()
     } else
