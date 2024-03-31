@@ -1,5 +1,7 @@
+#include <string>
 #include "plateau.hpp"
 #include "realEstateLand.hpp"
+#include "configFileParser.hpp"
 
 // Constructeur par défaut
 Plateau::Plateau()
@@ -9,6 +11,12 @@ Plateau::Plateau()
     {
         global.push_back(new RealEstateLand("Unkown", 666, Color::GREEN));
     }
+}
+
+Plateau::Plateau(string filename)
+{
+    ConfigFileParser cfp(filename);
+    global = cfp.parseBoardConfigFile();
 }
 
 // Destructeur
@@ -37,19 +45,6 @@ Land* Plateau::getLandAt(int index) const
     }
 }
 
-// Méthode pour imprimer le plateau
-void Plateau::print() const
-{
-    int length = global.size();
-
-    for (int i = 0; i < length; ++i)
-    {
-        //cout << "Case " << i << ": " << global[i]->getDescription() << std::endl; // Supposons que la classe Land ait une méthode getDescription()
-        cout << "Case " << i << ": " << "none" << endl; // Supposons que la classe Land ait une méthode getDescription()
-
-    }
-}
-
 // Méthode pour imprimer le contenu de la case à l'index spécifié
 void Plateau::printLandAt(int index) const
 {
@@ -57,9 +52,18 @@ void Plateau::printLandAt(int index) const
 
     if (index >= 0 && index < length)
     {
-        cout << "Contenu de la case " << index << ": " << "not defined yet"<< endl; // Supposons que la classe Land ait une méthode getDescription()
+        cout << *global[index] << endl; // Supposons que la classe Land ait une méthode getDescription()
     } else
     {
         cerr << "Erreur : indice de case invalide." << endl;
     }
+}
+
+ostream& operator<<(ostream& os, const Plateau& p)
+{
+    int length = p.global.size();
+
+    for (int i = 0; i < length; ++i)
+        os << *p.global[i] << endl;
+    return os;
 }

@@ -13,12 +13,13 @@ private:
 public:
     // Constructeur
     Plateau();
+    Plateau(string filename);
     // Destructeur
     ~Plateau();
     // Getter pour obtenir une case du plateau par son index
     Land* getLandAt(int index) const;
-    // Méthode pour imprimer le plateau
-    void print() const;
     // Méthode pour imprimer le contenu de la case à l'index spécifié
     void printLandAt(int index) const;
+
+    friend ostream& operator<<(ostream& os, const Plateau& p);
 };
