@@ -39,27 +39,22 @@ void testRealEstateLand()
 
 }
 
-int main()
+
+void testBoard()
 {
     // Création d'un plateau
-    Plateau plateau;
-
-    // Affichage du plateau
-    cout << "Plateau avant initialisation :" << endl;
-    plateau.print();
+    Plateau plateau("plateau.config");
 
     // Accès à une case spécifique (par exemple, la case 5)
-    int index = 5;
+    int index = 3;
     Land* land = plateau.getLandAt(index);
-    if (land != nullptr)
-    {
-        plateau.printLandAt(index);
-    } else
-    {
-        cerr << "Erreur : indice de case invalide." << endl;
-    }
+    assert(land != nullptr);
+}
 
+int main()
+{
     // Exécuter les tests
+    testBoard();
     testHotel();
     testHouse();
     testRealEstateLand();
