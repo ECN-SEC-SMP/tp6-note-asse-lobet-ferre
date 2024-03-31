@@ -33,8 +33,25 @@ void testRealEstateLand()
 {
     RealEstateLand my_land("Mairie de doulon", 666, Color::GREEN);
 
-    std::cout << "Création d'une case de propriété" << endl;
+    assert(my_land.getName() == "Mairie de doulon");
+    assert(my_land.getPrice() == 666);
+    assert(my_land.getColor() == Color::GREEN);
+    assert(my_land.getType() == Type::REAL_ESTATE_LAND);
+    assert(my_land.isPurchased() == false);
 
+    try
+    {
+        my_land.getOwner();
+        assert(false);
+    }
+    catch(const exception& e)
+    {
+
+    }
+
+    //Todo ajouter joueur
+    //todo tester getOwner avec joueur
+    //todo tester isPuchased avec joueur
     cout << my_land << endl;
 
 }
