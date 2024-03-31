@@ -1,7 +1,6 @@
 #include <string>
 #include "plateau.hpp"
 #include "realEstateLand.hpp"
-#include "configFileParser.hpp"
 
 // Constructeur par défaut
 Plateau::Plateau()
@@ -15,8 +14,8 @@ Plateau::Plateau()
 
 Plateau::Plateau(string filename)
 {
-    ConfigFileParser cfp(filename);
-    global = cfp.parseBoardConfigFile();
+    this->cfp = new ConfigFileParser(filename);
+    global = cfp->parseBoardConfigFile();
 }
 
 // Destructeur
@@ -28,6 +27,7 @@ Plateau::~Plateau()
     {
         delete global[i];
     }
+    delete this->cfp;
  }
 
 // Getter pour obtenir une case du plateau par son index
