@@ -5,7 +5,7 @@
 Plateau::Plateau()
 {
     // Initialisation de chaque case du plateau avec des instances de Land
-    for (int i = 0; i < 40; ++i)
+    for (int i = 0; i < 10; ++i)
     {
         global.push_back(new RealEstateLand("Unkown", 666, Color::GREEN));
     }
