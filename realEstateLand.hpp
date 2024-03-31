@@ -5,15 +5,14 @@
 
 enum class Color
 {
+    PURPLE,
+    GREY,
+    PINK,
+    ORANGE,
     RED,
+    YELLOW,
     GREEN,
     BLUE,
-    YELLOW,
-    ORANGE,
-    PURPLE,
-    PINK,
-    WHITE,
-    BLACK,
 };
 
 class RealEstateLand : public BuyableLand
@@ -24,6 +23,7 @@ private:
 
 public:
     RealEstateLand(string name, int price, Color color);
+    RealEstateLand(string name, int price, string color);
     ~RealEstateLand() override;
 
     Color getColor() const;
