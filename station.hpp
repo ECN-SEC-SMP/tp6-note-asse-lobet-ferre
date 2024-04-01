@@ -9,7 +9,6 @@ using namespace std;
 class Station : public BuyableLand
 {
 private:
-    int rent;
 
 public:
     Station(string name, int price);

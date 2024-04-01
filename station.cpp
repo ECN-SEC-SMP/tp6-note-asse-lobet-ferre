@@ -2,7 +2,7 @@
 
 Station::Station(string name, int price) : BuyableLand(name, Type::STATION, price)
 {
-    //this->rent = price;
+
 }
 
 Station::~Station()

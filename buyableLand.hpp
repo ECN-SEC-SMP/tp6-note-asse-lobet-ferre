@@ -20,6 +20,7 @@ public:
 
 protected:
     int price;
+    int rent;
     Player *owner = nullptr;
 };
 

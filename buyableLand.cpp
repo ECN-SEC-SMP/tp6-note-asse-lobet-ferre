@@ -1,7 +1,7 @@
 #include <stdexcept>
 #include "buyableLand.hpp"
 
-BuyableLand::BuyableLand(string name, Type type, int price) : Land(name, type), price(price) {};
+BuyableLand::BuyableLand(string name, Type type, int price) : Land(name, type), price(price), rent(price) { };
 
 int BuyableLand::getPrice() const
 {
