@@ -5,6 +5,7 @@
 #include "station.hpp"
 #include "publicService.hpp"
 #include "card.hpp"
+#include "jail.hpp"
 
 ConfigFileParser::ConfigFileParser(string filename) : filename(filename) { }
 
@@ -186,6 +187,28 @@ vector<Land *> ConfigFileParser::parseBoardConfigFile()
                             cout << "Instanciation d'un service publique" << endl;
                             PublicService* newService = new PublicService(name, price);
                             board.push_back(newService);
+                        }
+                        break;
+                    }
+                }
+            }
+            else if (!line.compare("[Prison]"))
+            {
+                string name;
+
+                while (getline(myfile, line))
+                {
+                    if (line.find("Nom") != string::npos)
+                    {
+                        name = extractStringProperty(line);
+                    }
+                    else
+                    {
+                        if (!name.empty())
+                        {
+                            cout << "Instanciation d'une prison" << endl;
+                            Jail* newJail = new Jail(name);
+                            board.push_back(newJail);
                         }
                         break;
                     }
