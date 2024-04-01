@@ -17,4 +17,4 @@ public:
     void action() const override;
 };
 
-ostream& operator<<(ostream& os, const Card& s);
+ostream& operator<<(ostream& os, const Card& c);

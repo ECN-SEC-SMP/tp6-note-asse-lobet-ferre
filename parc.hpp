@@ -17,4 +17,4 @@ public:
     void action() const override;
 };
 
-ostream& operator<<(ostream& os, const Parc& t);
+ostream& operator<<(ostream& os, const Parc& p);

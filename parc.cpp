@@ -8,3 +8,9 @@ void Parc::action() const
 {
     cout << "Passer son tour" << endl;
 }
+
+ostream& operator<<(ostream& os, const Parc& p)
+{
+    os << static_cast<const Land&> (p);
+    return os;
+}

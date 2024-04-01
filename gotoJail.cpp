@@ -8,3 +8,9 @@ void GotoJail::action() const
 {
     cout << "Direction la zonzon!" << endl;
 }
+
+ostream& operator<<(ostream& os, const GotoJail& gj)
+{
+    os << static_cast<const Land&> (gj);
+    return os;
+}

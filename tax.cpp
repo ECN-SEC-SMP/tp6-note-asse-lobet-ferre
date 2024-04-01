@@ -8,3 +8,9 @@ void Tax::action() const
 {
     cout << "Payer la taxe" << endl;
 }
+
+ostream& operator<<(ostream& os, const Tax& t)
+{
+    os << static_cast<const Land&> (t);
+    return os;
+}
