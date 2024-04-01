@@ -37,6 +37,26 @@ ostream& operator<<(ostream& os, const Land& l)
         os << "Terrain achetable" << endl;
         break;
 
+    case Type::COMMUNITY_FUND:
+        os << "Caisse de communauté" << endl;
+        break;
+
+    case Type::GO_TO_JAIL:
+        os << "Aller en prison" << endl;
+        break;
+
+    case Type::LUCK:
+        os << "Case chance" << endl;
+        break;
+
+    case Type::TAX:
+        os << "Case de taxe" << endl;
+        break;
+
+    case Type::FREE_PARK:
+        os << "Parking gratuit" << endl;
+        break;
+
     default:
         os << "Euuhh.... La on a un probleme? jsp, je dis ca, je dis rien..." << endl;
         break;

@@ -13,7 +13,6 @@ enum class Type
     PUBLIC_SERVICE,
     STATION,
     LUCK,
-    PRISON_VISIT,
     JAIL,
     FREE_PARK,
     GO_TO_JAIL,

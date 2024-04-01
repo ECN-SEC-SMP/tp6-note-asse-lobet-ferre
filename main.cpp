@@ -66,6 +66,8 @@ void testBoard()
     int index = 1;
     Land* land = plateau.getLandAt(index);
     assert(land != nullptr);
+
+    cout << plateau << endl;
 }
 
 int main()
