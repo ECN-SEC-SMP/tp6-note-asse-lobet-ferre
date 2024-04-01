@@ -63,7 +63,7 @@ void testBoard()
     BoardGame plateau("plateau.config");
 
     // Accès à une case spécifique (par exemple, la case 5)
-    int index = 3;
+    int index = 1;
     Land* land = plateau.getLandAt(index);
     assert(land != nullptr);
 }

@@ -95,10 +95,11 @@ vector<Land *> ConfigFileParser::parseBoardConfigFile()
                     {
                         if (!name.empty() && price != 0 && !color.empty())
                         {
+                            cout << "Instanciation des cases propriétés" << endl;
                             RealEstateLand* new_real_estate_land = new RealEstateLand(name, price, color);
                             board.push_back(new_real_estate_land);
-                            break;
                         }
+                        break;
                     }
                 }
             }

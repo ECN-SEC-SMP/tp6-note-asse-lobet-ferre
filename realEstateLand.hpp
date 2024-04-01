@@ -18,7 +18,6 @@ enum class Color
 class RealEstateLand : public BuyableLand
 {
 private:
-    int rent;
     Color color;
 
 public:
