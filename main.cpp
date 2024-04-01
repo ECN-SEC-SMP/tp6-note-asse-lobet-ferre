@@ -1,6 +1,6 @@
 #include <iostream>
 #include "realEstateLand.hpp"
-#include "plateau.hpp"
+#include "boardGame.hpp"
 #include "hotel.hpp"
 #include "house.hpp"
 #include <cassert>
@@ -60,7 +60,7 @@ void testRealEstateLand()
 void testBoard()
 {
     // Création d'un plateau
-    Plateau plateau("plateau.config");
+    BoardGame plateau("plateau.config");
 
     // Accès à une case spécifique (par exemple, la case 5)
     int index = 3;

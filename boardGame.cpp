@@ -1,28 +1,28 @@
 #include <string>
-#include "plateau.hpp"
+#include "boardGame.hpp"
 #include "realEstateLand.hpp"
 
 // Constructeur par défaut
-Plateau::Plateau()
+BoardGame::BoardGame()
 {
-    // Initialisation de chaque case du plateau avec des instances de Land
+    // Initialisation de chaque case du BoardGame avec des instances de Land
     for (int i = 0; i < 10; ++i)
     {
         global.push_back(new RealEstateLand("Unkown", 666, Color::GREEN));
     }
 }
 
-Plateau::Plateau(string filename)
+BoardGame::BoardGame(string filename)
 {
     this->cfp = new ConfigFileParser(filename);
     global = cfp->parseBoardConfigFile();
 }
 
 // Destructeur
-Plateau::~Plateau()
+BoardGame::~BoardGame()
 {
     int length = global.size();
-    // Libération de la mémoire allouée pour chaque case du plateau
+    // Libération de la mémoire allouée pour chaque case du BoardGame
     for (int i = 0; i < length; i++)
     {
         delete global[i];
@@ -30,8 +30,8 @@ Plateau::~Plateau()
     delete this->cfp;
  }
 
-// Getter pour obtenir une case du plateau par son index
-Land* Plateau::getLandAt(int index) const
+// Getter pour obtenir une case du BoardGame par son index
+Land* BoardGame::getLandAt(int index) const
 {
     int length = global.size();
 
@@ -46,7 +46,7 @@ Land* Plateau::getLandAt(int index) const
 }
 
 // Méthode pour imprimer le contenu de la case à l'index spécifié
-void Plateau::printLandAt(int index) const
+void BoardGame::printLandAt(int index) const
 {
     int length = global.size();
 
@@ -59,7 +59,7 @@ void Plateau::printLandAt(int index) const
     }
 }
 
-ostream& operator<<(ostream& os, const Plateau& p)
+ostream& operator<<(ostream& os, const BoardGame& p)
 {
     int length = p.global.size();
 
