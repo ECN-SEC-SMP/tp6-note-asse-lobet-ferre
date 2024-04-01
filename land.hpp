@@ -17,6 +17,7 @@ enum class Type
     JAIL,
     FREE_PARK,
     GO_TO_JAIL,
+    TAX,
 };
 
 class Land
