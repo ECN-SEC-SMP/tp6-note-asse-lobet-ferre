@@ -4,6 +4,7 @@
 #include "realEstateLand.hpp"
 #include "station.hpp"
 #include "publicService.hpp"
+#include "card.hpp"
 
 ConfigFileParser::ConfigFileParser(string filename) : filename(filename) { }
 
@@ -104,9 +105,10 @@ vector<Land *> ConfigFileParser::parseBoardConfigFile()
                     }
                 }
             }
-            else if (!line.compare("[Communaute]"))
+            else if (!line.compare("[Carte]"))
             {
                 string name;
+                string type;
 
                 while (getline(myfile, line))
                 {
@@ -114,11 +116,18 @@ vector<Land *> ConfigFileParser::parseBoardConfigFile()
                     {
                         name = extractStringProperty(line);
                     }
+                    else if (line.find("Type") != string::npos)
+                    {
+                        type = extractStringProperty(line);
+                    }
                     else
                     {
-                        if (!name.empty())
+                        if (!name.empty() && !type.empty())
                         {
-                            cout << "Instanciation des cases communauté pas encore gérée" << endl;
+                            cout << "Instanciation d'une case: " << type << endl;
+                            Type t = !type.compare("communaute") ? Type::COMMUNITY_FUND : Type::LUCK;
+                            Card* newCardLand = new Card(name, t);
+                            board.push_back(newCardLand);
                         }
                         break;
                     }
