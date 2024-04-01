@@ -2,6 +2,7 @@
 #include <iostream>
 #include "configFileParser.hpp"
 #include "realEstateLand.hpp"
+#include "station.hpp"
 
 ConfigFileParser::ConfigFileParser(string filename) : filename(filename) { }
 
@@ -116,6 +117,37 @@ vector<Land *> ConfigFileParser::parseBoardConfigFile()
                         if (!name.empty())
                         {
                             cout << "Instanciation des cases communauté pas encore gérée" << endl;
+                        }
+                        break;
+                    }
+                }
+            }
+            else if (!line.compare("[Gare]"))
+            {
+                string name;
+                int price = 0;
+
+                while (getline(myfile, line))
+                {
+                    if (line.find("Nom") != string::npos)
+                    {
+                        name = extractStringProperty(line);
+                    }
+                    else if (line.find("Prix") != string::npos)
+                    {
+                        price = extractIntProperty(line);
+                    }
+                    else if (line.find("Loyers") != string::npos)
+                    {
+                        cout << "La gestion du loyer n'est pas implémentée" << endl;
+                    }
+                    else
+                    {
+                        if (!name.empty() && price != 0)
+                        {
+                            cout << "Instanciation d'une station" << endl;
+                            Station* new_station = new Station(name, price);
+                            board.push_back(new_station);
                         }
                         break;
                     }
