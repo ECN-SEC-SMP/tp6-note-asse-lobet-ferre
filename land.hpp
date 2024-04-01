@@ -8,10 +8,15 @@ using namespace std;
 enum class Type
 {
     START,
-    JAIL,
+    REAL_ESTATE_LAND,
+    COMMUNITY_FUND,
     PUBLIC_SERVICE,
     STATION,
-    REAL_ESTATE_LAND
+    LUCK,
+    PRISON_VISIT,
+    JAIL,
+    FREE_PARK,
+    GO_TO_JAIL,
 };
 
 class Land
