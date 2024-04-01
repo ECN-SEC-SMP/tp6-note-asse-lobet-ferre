@@ -8,6 +8,7 @@
 #include "jail.hpp"
 #include "gotoJail.hpp"
 #include "tax.hpp"
+#include "parc.hpp"
 
 ConfigFileParser::ConfigFileParser(string filename) : filename(filename) { }
 
@@ -260,6 +261,28 @@ vector<Land *> ConfigFileParser::parseBoardConfigFile()
                             cout << "Instanciation d'une case de taxe\"" << endl;
                             Tax* newTax = new Tax(name, tax);
                             board.push_back(newTax);
+                        }
+                        break;
+                    }
+                }
+            }
+            else if (!line.compare("[Parc]"))
+            {
+                string name;
+
+                while (getline(myfile, line))
+                {
+                    if (line.find("Nom") != string::npos)
+                    {
+                        name = extractStringProperty(line);
+                    }
+                    else
+                    {
+                        if (!name.empty())
+                        {
+                            cout << "Instanciation d'une case de parc" << endl;
+                            Parc* newParc = new Parc(name);
+                            board.push_back(newParc);
                         }
                         break;
                     }
