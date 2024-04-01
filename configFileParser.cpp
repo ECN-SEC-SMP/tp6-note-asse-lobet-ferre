@@ -3,6 +3,7 @@
 #include "configFileParser.hpp"
 #include "realEstateLand.hpp"
 #include "station.hpp"
+#include "publicService.hpp"
 
 ConfigFileParser::ConfigFileParser(string filename) : filename(filename) { }
 
@@ -149,6 +150,33 @@ vector<Land *> ConfigFileParser::parseBoardConfigFile()
                             cout << "Instanciation d'une station" << endl;
                             Station* new_station = new Station(name, price);
                             board.push_back(new_station);
+                        }
+                        break;
+                    }
+                }
+            }
+            else if (!line.compare("[Service publique]"))
+            {
+                string name;
+                int price = 0;
+
+                while (getline(myfile, line))
+                {
+                    if (line.find("Nom") != string::npos)
+                    {
+                        name = extractStringProperty(line);
+                    }
+                    else if (line.find("Prix") != string::npos)
+                    {
+                        price = extractIntProperty(line);
+                    }
+                    else
+                    {
+                        if (!name.empty() && price != 0)
+                        {
+                            cout << "Instanciation d'un service publique" << endl;
+                            PublicService* new_service = new PublicService(name, price);
+                            board.push_back(new_service);
                         }
                         break;
                     }
