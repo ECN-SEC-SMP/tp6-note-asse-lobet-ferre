@@ -97,8 +97,8 @@ vector<Land *> ConfigFileParser::parseBoardConfigFile()
                         if (!name.empty() && price != 0 && !color.empty())
                         {
                             cout << "Instanciation des cases propriétés" << endl;
-                            RealEstateLand* new_real_estate_land = new RealEstateLand(name, price, color);
-                            board.push_back(new_real_estate_land);
+                            RealEstateLand* newRealEstateLand = new RealEstateLand(name, price, color);
+                            board.push_back(newRealEstateLand);
                         }
                         break;
                     }
@@ -148,8 +148,8 @@ vector<Land *> ConfigFileParser::parseBoardConfigFile()
                         if (!name.empty() && price != 0)
                         {
                             cout << "Instanciation d'une station" << endl;
-                            Station* new_station = new Station(name, price);
-                            board.push_back(new_station);
+                            Station* newStation = new Station(name, price);
+                            board.push_back(newStation);
                         }
                         break;
                     }
@@ -175,8 +175,8 @@ vector<Land *> ConfigFileParser::parseBoardConfigFile()
                         if (!name.empty() && price != 0)
                         {
                             cout << "Instanciation d'un service publique" << endl;
-                            PublicService* new_service = new PublicService(name, price);
-                            board.push_back(new_service);
+                            PublicService* newService = new PublicService(name, price);
+                            board.push_back(newService);
                         }
                         break;
                     }
