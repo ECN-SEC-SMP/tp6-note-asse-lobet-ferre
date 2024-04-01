@@ -9,6 +9,7 @@
 #include "gotoJail.hpp"
 #include "tax.hpp"
 #include "parc.hpp"
+#include "start.hpp"
 
 ConfigFileParser::ConfigFileParser(string filename) : filename(filename) { }
 
@@ -67,7 +68,9 @@ vector<Land *> ConfigFileParser::parseBoardConfigFile()
                     {
                         if (!name.empty())
                         {
-                            cout << "Instanciation de la case départ pas encore gérée" << endl;
+                            cout << "Instanciation de la case départ" << endl;
+                            Start* newStart = new Start(name);
+                            board.push_back(newStart);
                         }
                         break;
                     }
