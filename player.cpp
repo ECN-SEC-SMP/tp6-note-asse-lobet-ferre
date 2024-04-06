@@ -43,9 +43,14 @@ int Player::getPosition () const
     return this->position;
 }
 
-void Player::setPosition(int m)
+void Player::setPosition(int newPosition)
 {
-    this->position = m;
+    this->position = newPosition;
+}
+
+void Player::setNbDouble(int newNbDouble)
+{
+    this->nbDouble = newNbDouble;
 }
 
 ostream& operator<<(ostream& os, const Player& player)

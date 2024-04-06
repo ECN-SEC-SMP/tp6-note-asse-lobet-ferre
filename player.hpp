@@ -27,7 +27,8 @@ class Player
         int getNbDouble() const;
         int getPosition () const;
 
-        void setPosition(int m);
+        void setPosition(int newPosition);
+        void setNbDouble(int newNbDouble);
 
         friend ostream& operator<<(ostream& os, const Player& player);
 };
