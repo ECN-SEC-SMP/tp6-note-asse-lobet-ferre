@@ -79,6 +79,23 @@ void GameMaster::goToHornyJail(Player horny)
     movePlayerToPosition(horny, coordinates);
 }
 
+// ask if the player's turn is effectively finished before starting a new player's turn
+bool GameMaster::askForEndOfTurn(Player nextPlayer)
+{
+    string yesOrNo;
+    cout << "Are you ready for " << nextPlayer.getName() << " turn ? (Y/N)." << endl;
+    cin >> yesOrNo;
+
+    if(yesOrNo == "Y" || yesOrNo == "y")
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
 // The main game sequence
 void GameMaster::Game()
 {
@@ -126,6 +143,8 @@ void GameMaster::Game()
                 movePlayerFromPosition(this->getPlayer(j), this->getPlayer(j).getMovement());
 
                 cout << this->getPlayer(j).getName() << " est maintenant sur la case " << this->getPlayer(j).getPosition() << "." << endl;
+
+                askForEndOfTurn(this->getPlayer(j+1));
             }
         break;
 

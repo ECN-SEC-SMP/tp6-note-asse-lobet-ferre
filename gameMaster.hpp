@@ -24,7 +24,6 @@ class GameMaster
         void startGame();
         void movePlayerToPosition(Player player, int position);
         void movePlayerFromPosition(Player player, int movement);
-
         void goToHornyJail(Player horny);
 
         Player getPlayer(int i);
@@ -34,7 +33,7 @@ class GameMaster
         int newDiceRoll();
 
         bool checkDiceForDouble(int dice1, int dice2);
-
+        bool askForEndOfTurn(Player nextPlayer);
 };
 
 enum GamePhase
