@@ -43,6 +43,11 @@ int Player::getPosition () const
     return this->position;
 }
 
+void Player::setPosition(int m)
+{
+    this->position = m;
+}
+
 ostream& operator<<(ostream& os, const Player& player)
 {
     os << "Nom du joueur :" << player.getName() << endl;

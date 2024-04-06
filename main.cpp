@@ -1,9 +1,12 @@
 #include <iostream>
+#include <cassert>
+
 #include "realEstateLand.hpp"
 #include "boardGame.hpp"
 #include "hotel.hpp"
 #include "house.hpp"
-#include <cassert>
+#include "gameMaster.hpp"
+#include "player.hpp"
 
 using namespace std;
 
@@ -84,13 +87,6 @@ void testPlayer()
 
 int main()
 {
-    // Exécuter les tests
-    testBoard();
-    testHotel();
-    testHouse();
-    testRealEstateLand();
-
-    cout << "Tout les tests sont réussi" << endl;
-
+    cout << "Bonjour monde!" << endl;
     return 0;
 }
