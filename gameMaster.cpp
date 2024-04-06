@@ -3,7 +3,9 @@
 
 GameMaster::GameMaster()
 {
-
+    this->nbPlayers = 0;
+    this->dice1 = 0;
+    this->dice2 = 0;
 }
 
 
@@ -12,14 +14,17 @@ void GameMaster::startGame()
     cout << "Combien y-a-t'il de joueurs ?" << endl;
     cin >> this->nbPlayers;
 
-    vector<Player> Players;
+    if (this->nbPlayers > 8)
+    {
+        return;
+    }
 
+    string name;
     for (int i = 0; i < this->nbPlayers; i++)
     {
-        string name;
         cout << "Nom du joueur ?" << endl;
         cin >> name;
-        Player joueur_i(name, 123, 5, 0, 5);
+        Player joueur_i(name, 1500, 0, 0, 0);
 
         Players.push_back(joueur_i);
     }
@@ -33,6 +38,11 @@ int GameMaster::newDiceRoll()
 bool GameMaster::checkDiceForDouble(int dice1, int dice2)
 {
     return (dice1 == dice2) ? true : false;
+}
+
+Player GameMaster::getPlayer(int i)
+{
+    return this->Players[i];
 }
 
 
@@ -64,7 +74,7 @@ void GameMaster::Game()
 
             }
 
-            // Player.instance.movement = gm.dice1 + gm.dice2;
+            this->getPlayer(0).setMovement(dice1 + dice2);
             // move(Player.instance, Player.instance.movement)
 
             break;

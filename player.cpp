@@ -49,13 +49,18 @@ int Player::getPosition () const
     return this->position;
 }
 
-// ostream& operator<<(ostream& os, const Player& player);
+void Player::setMovement(int m)
+{
+    this->movement = m;
+}
+
+// ostream& operator<<(ostream& os, const Player& player)
 // {
-//     os << "Nom du joueur :" <<player.getName() << endl;
-//     os << "     Patrimoine Financier : " <<player.getFinancialAssets() << endl;
-//     os << "     Résultat cumulé des dés : " <<player.getMovement() << endl;
-//     os << "     Nombre de doubles consécutifs : " <<player.getNbDouble() << endl;
-//     os << "     Position : " <<player.getPosition() << endl;
+//     os << "Nom du joueur : " << player.getName() << endl;
+//     os << "     Patrimoine Financier : " << player.getFinancialAssets() << endl;
+//     os << "     Résultat cumulé des dés : " << player.getMovement() << endl;
+//     os << "     Nombre de doubles consécutifs : " << player.getNbDouble() << endl;
+//     os << "     Position : " << player.getPosition() << endl;
 
 //     return os;
 // }
