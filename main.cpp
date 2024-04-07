@@ -87,6 +87,12 @@ void testPlayer()
 
 int main()
 {
-    cout << "Bonjour monde!" << endl;
+    // Exécuter les tests
+    testBoard();
+    testHotel();
+    testHouse();
+    testRealEstateLand();
+
+    cout << "Tous les tests sont réussi" << endl;
     return 0;
 }
