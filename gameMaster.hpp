@@ -33,7 +33,7 @@ class GameMaster
         int newDiceRoll();
 
         bool checkDiceForDouble(int dice1, int dice2);
-        bool askForEndOfTurn(Player nextPlayer);
+        bool askForEndOfTurn();
 };
 
 enum GamePhase

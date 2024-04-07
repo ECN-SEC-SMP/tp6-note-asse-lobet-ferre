@@ -80,10 +80,10 @@ void GameMaster::goToHornyJail(Player horny)
 }
 
 // ask if the player's turn is effectively finished before starting a new player's turn
-bool GameMaster::askForEndOfTurn(Player nextPlayer)
+bool GameMaster::askForEndOfTurn()
 {
     string yesOrNo;
-    cout << "Are you ready for " << nextPlayer.getName() << " turn ? (Y/N)." << endl;
+    cout << "End of turn (Y/N)." << endl;
     cin >> yesOrNo;
 
     if(yesOrNo == "Y" || yesOrNo == "y")
@@ -137,11 +137,11 @@ void GameMaster::Game()
                     }
                 }
 
-                this->getPlayer(j).setPosition(dice1 + dice2);
+                this->getPlayer(j).setPosition(dice1 + dice2); //todo case courante + dés
 
                 cout << this->getPlayer(j).getName() << " est maintenant sur la case " << this->getPlayer(j).getPosition() << "." << endl;
 
-                askForEndOfTurn(this->getPlayer(j+1));
+                askForEndOfTurn();
             }
         break;
 
