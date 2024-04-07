@@ -5,7 +5,7 @@
 
 using namespace std;
 
-enum class Type
+enum Type
 {
     START,
     REAL_ESTATE_LAND,
